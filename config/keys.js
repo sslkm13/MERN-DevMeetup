@@ -1,5 +1,5 @@
-module.exports = {
-	mongoURI:
-	'mongodb://admin_mern:password1@ds131903.mlab.com:31903/mernapp',
-	secretOrKey: 'saltsecret'
-};
+if(process.env.NODE_ENV === 'production') {
+	module.exports = require('./keys_prod');
+} else {
+	module.exports = require('./keys_dev');
+}
